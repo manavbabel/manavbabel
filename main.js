@@ -2,18 +2,22 @@
 
 $(function() {
     $(window).scroll(function () {
-       if ($(this).scrollTop() > 170) {
+       if ($(this).scrollTop() > 100) {
           $("#Name").addClass("changeColor");
           $("#NameText").addClass("changeColor");
           $("#Scroll").addClass("hide");
+          /*alert("start")*/
        } else {
           $("#Name").removeClass("changeColor");
           $("#NameText").removeClass("changeColor");
+          $("#Scroll").removeClass("hide");
        }
     });
  });
 
  /* Konami code functionality */
+
+ /*
 
 var KonamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"]
 
@@ -49,3 +53,4 @@ function ActivateCheats() {
   alert("cheats activated");
 }
 
+*/

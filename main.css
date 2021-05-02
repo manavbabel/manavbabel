@@ -68,9 +68,11 @@ header {
 }
 
 #NameText {
+    position: sticky;
     font-family: "Ailerons", sans-serif;
     color: var(--black);
     font-size: 95px;
+    transition: 1s background-color;
 }
 
 #NameText::before {
@@ -116,6 +118,14 @@ header {
 
 #NameText.changeColor {
     color: var(--white);
+}
+
+#NameText.changeColor:hover::before {
+    border-color: var(--white);
+}
+
+#NameText.changeColor:hover::after {
+    border-color: var(--white);
 }
 
 #Scroll{
