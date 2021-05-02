@@ -1,0 +1,351 @@
+:root{
+    --black: #383b3e;
+    --white: #f5f5f5;
+    --Sun: #ffa500;
+    --Mercury: #b5a7a7;
+    --Venus: #eecb8b;
+    --Earth: #40e0d0;
+    --Mars: #ff0000;
+    --Jupiter: #cb4154;
+    --Saturn: #CCCC00;
+    --Uranus: #add8e6;
+    --Neptune: #000080;
+
+    --SunRadius: 150px;
+    --MercuryRadius: 40px;
+    --VenusRadius: 60px;
+    --EarthRadius: 60px;
+    --MarsRadius: 50px;
+    --JupiterRadius: 130px;
+    --SaturnRadius: 120px;
+    --UranusRadius: 110px;
+    --NeptuneRadius: 100px;
+
+}
+
+/* Can make name cycle through:
+ADAM.CG PRO
+Ailerons
+Amalfi Coast
+Arkhip
+Century Gothic
+Diamant Handwriting
+Gill Sans Nova Light
+MANIFESTO */
+
+::-webkit-scrollbar {
+    width:0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height:180vh;
+}
+
+#Name { 
+    height:100vh;
+    position: sticky;
+    top:0;
+
+    background-color: var(--white);
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    transition: 1s background-color;
+}
+
+#NameText {
+    font-family: "Ailerons", sans-serif;
+    color: var(--black);
+    font-size: 95px;
+}
+
+#NameText::before {
+    content: '';
+    display: block;
+    position: relative;
+    left: 2.5%;
+    border: 1px solid var(--black);
+    width: 95%;
+
+    transition: 1s;
+    opacity: 0;
+    transform: translateX(-150%);
+
+}
+
+#NameText::after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 2.5%;
+    border: 1px solid var(--black);
+    width: 95%;
+
+    transition: 1s;
+    transform: translateX(150%);
+    opacity: 0;
+}
+
+#NameText:hover::before {
+    opacity:1;
+    transform: translateX(0)
+}
+
+#NameText:hover::after {
+    opacity:1;
+    transform: translateX(0)
+}
+
+#Name.changeColor {
+    background-color: var(--black);
+}
+
+#NameText.changeColor {
+    color: var(--white);
+}
+
+#Scroll{
+    font-family: "Bookman Old Style", serif;
+    color: var(--black);
+    font-size: 30px;
+
+    opacity: 0;
+
+    transition: 1s display;
+    
+    position:relative;
+    display: flex;
+    place-content: center;
+    top:0;
+
+    animation: appear 1s ease-in-out 3s 1 normal forwards;
+}
+
+#Scroll.hide {
+    display:none;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform:translateY(-120%)
+    }
+}
+
+nav{
+    margin-top: 50vh;
+    width:100%;
+    display:flex;
+    justify-content: black-around;
+    align-items: center;
+    font-size: 20px;
+    color:var(--white);
+    border: 1px solid white;
+}
+
+nav ul {
+    width:100%;
+    list-style:none;
+    display:flex;
+    justify-content: black-around;
+    align-items: center;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: none;
+    color:var(--white)
+}
+
+nav ul li a:hover{
+    color:red;
+}
+
+#Sun {
+    width: var(--SunRadius);
+    height: var(--SunRadius);
+    border-radius: 50%;
+    background: var(--Sun);
+    color: var(--white);
+    line-height: var(--SunRadius);
+    text-align: center;
+}
+
+#Mercury {
+    width: var(--MercuryRadius);
+    height: var(--MercuryRadius);
+    border-radius: 50%;
+    background: var(--Mercury);
+    color: var(--white);
+    line-height: var(--MercuryRadius);
+    text-align: center;
+}
+
+#Venus {
+    width: var(--VenusRadius);
+    height: var(--VenusRadius);
+    border-radius: 50%;
+    background: var(--Venus);
+    color: var(--white);
+    line-height: var(--VenusRadius);
+    text-align: center;
+}
+
+#Earth {
+    width: var(--EarthRadius);
+    height: var(--EarthRadius);
+    border-radius: 50%;
+    background: var(--Earth);
+    color: var(--white);
+    line-height: var(--EarthRadius);
+    text-align: center;
+}
+
+#Mars {
+    width: var(--MarsRadius);
+    height: var(--MarsRadius);
+    border-radius: 50%;
+    background: var(--Jupiter);
+    color: var(--white);
+    line-height: var(--MarsRadius);
+    text-align: center;
+}
+
+#Jupiter {
+    width: var(--JupiterRadius);
+    height: var(--JupiterRadius);
+    border-radius: 50%;
+    background: var(--Jupiter);
+    color: var(--white);
+    line-height: var(--JupiterRadius);
+    text-align: center;
+}
+
+#Saturn {
+    width: var(--SaturnRadius);
+    height: var(--SaturnRadius);
+    border-radius: 50%;
+    background: var(--Saturn);
+    color: var(--white);
+    line-height: var(--SaturnRadius);
+    text-align: center;
+}
+
+#Uranus {
+    width: var(--UranusRadius);
+    height: var(--UranusRadius);
+    border-radius: 50%;
+    background: var(--Uranus);
+    color: var(--white);
+    line-height: var(--UranusRadius);
+    text-align: center;
+}
+
+#Neptune {
+    width: var(--NeptuneRadius);
+    height: var(--NeptuneRadius);
+    border-radius: 50%;
+    background: var(--Neptune);
+    color: var(--white);
+    line-height: var(--NeptuneRadius);
+    text-align: center;
+}
+
+body {
+    background-color: var(--black);
+    height:3000px;
+}
+
+.content {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+    flex-wrap: wrap;
+    border: 2px solid yellow;
+    z-index: 1;
+}
+
+.cards .card {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgba(255,255,255,0.2);
+    border-left: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.cards .card section {
+    padding: 20px;
+    transition: 0.5s;
+    height: 100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.cards .card section h1 {
+    font-family: "MANIFESTO", serif;
+    font-size: 100px;
+    color: var(--white);
+
+    transition:0.5s;
+    transform: translateX(45%);
+    opacity: 0.5;
+}
+
+.cards .card:hover section h1 {
+    transform: translateX(0);
+    opacity:1;
+}
+
+
+.cards .card section p {
+    font-family: "Gill Sans Nova Light", sans-serif;
+    font-weight: 300;
+    color: var(--white);
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+
+
+
