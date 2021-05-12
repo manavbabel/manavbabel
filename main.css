@@ -49,83 +49,147 @@ html, body {
     box-sizing: border-box;
 }
 
-header {
-    height:180vh;
-}
-
 #Name { 
-    height:100vh;
-    position: sticky;
-    top:0;
-
-    background-color: var(--white);
+    height: 100vh;
 
     display: flex;
-    place-content: center;
+    justify-content: center;
+    top: 500px;
     align-items: center;
 
-    transition: 1s background-color;
-}
-
-#NameText {
-    position: sticky;
-    font-family: "Ailerons", sans-serif;
-    color: var(--black);
-    font-size: 95px;
-    transition: 1s background-color;
-}
-
-#NameText::before {
-    content: '';
-    display: block;
-    position: relative;
-    left: 2.5%;
-    border: 1px solid var(--black);
-    width: 95%;
-
+    background-color: var(--white);
+    
     transition: 1s;
-    opacity: 0;
-    transform: translateX(-150%);
-
-}
-
-#NameText::after {
-    content: '';
-    display: block;
-    position: relative;
-    left: 2.5%;
-    border: 1px solid var(--black);
-    width: 95%;
-
-    transition: 1s;
-    transform: translateX(150%);
-    opacity: 0;
-}
-
-#NameText:hover::before {
-    opacity:1;
-    transform: translateX(0)
-}
-
-#NameText:hover::after {
-    opacity:1;
-    transform: translateX(0)
 }
 
 #Name.changeColor {
     background-color: var(--black);
 }
 
+#NameText {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+
+    font-family: "Ailerons", sans-serif;
+    color: var(--black);
+    font-size: 95px;
+    
+    transition: 1s;
+
+    z-index: 2;
+}
+
+#NameText::before {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    border: 3px solid var(--black);
+    width: 0px;
+    border-radius: 10px;
+
+    transition: 1s;
+    opacity: 0;
+    transform: translateY(107px);
+
+}
+
+#NameText::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    border: 3px solid var(--black);
+    width: 0px;
+    border-radius: 10px;
+
+    transition: 1s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#NameText:hover::before {
+    opacity:1;
+    width: 560px;
+    transform: translateY(10px);
+}
+
+#NameText:hover::after {
+    opacity:1;
+    width: 560px;
+    transform: translateY(107px);
+}
+
 #NameText.changeColor {
     color: var(--white);
 }
 
-#NameText.changeColor:hover::before {
+#NameText.changeColor::before {
     border-color: var(--white);
 }
 
-#NameText.changeColor:hover::after {
+#NameText.changeColor::after {
     border-color: var(--white);
+}
+
+#NameText.cheats {
+    background: -webkit-linear-gradient(left, rgb(255, 0, 234), rgb(31, 199, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 0.5s;
+}
+
+#NameText.cheats::before {
+    display: none;
+}
+
+#NameText.cheats::after {
+    display: none;
+}
+
+#NameText.cheats:hover {
+    transform: scale(1.12,1.1);
+}
+
+#NameBackground.cheats {
+    position: absolute;
+
+    height: 100px;
+    width: 670px;
+    border-radius: 15px;
+    
+    display:flex;
+    text-align: center;
+    justify-content: center;
+
+    background: -webkit-linear-gradient(right, rgb(255, 0, 234), rgb(31, 199, 255));
+
+    opacity: 1;
+    z-index: 0;
+
+    transition: 0.5s;
+}
+
+#NameBackground.cheats::after {
+    content: '';
+    display: block;
+    position: relative;
+    top: 5%;
+
+    border: 0px;
+    height: 90%;
+    width: 96%;
+    border-radius: 10px;
+    background-color: var(--white);
+
+    transition: 1s;
+    opacity: 1;
+}
+
+#NameBackground.cheats.changeColor::after {
+    background-color: var(--black);
 }
 
 #Scroll{
@@ -170,6 +234,10 @@ nav{
     border: 1px solid white;
 }
 
+nav.hidden {
+    display: none;
+}
+
 nav ul {
     width:100%;
     list-style:none;
@@ -202,89 +270,13 @@ nav ul li a:hover{
     text-align: center;
 }
 
-#Mercury {
-    width: var(--MercuryRadius);
-    height: var(--MercuryRadius);
-    border-radius: 50%;
-    background: var(--Mercury);
-    color: var(--white);
-    line-height: var(--MercuryRadius);
-    text-align: center;
-}
-
-#Venus {
-    width: var(--VenusRadius);
-    height: var(--VenusRadius);
-    border-radius: 50%;
-    background: var(--Venus);
-    color: var(--white);
-    line-height: var(--VenusRadius);
-    text-align: center;
-}
-
-#Earth {
-    width: var(--EarthRadius);
-    height: var(--EarthRadius);
-    border-radius: 50%;
-    background: var(--Earth);
-    color: var(--white);
-    line-height: var(--EarthRadius);
-    text-align: center;
-}
-
-#Mars {
-    width: var(--MarsRadius);
-    height: var(--MarsRadius);
-    border-radius: 50%;
-    background: var(--Jupiter);
-    color: var(--white);
-    line-height: var(--MarsRadius);
-    text-align: center;
-}
-
-#Jupiter {
-    width: var(--JupiterRadius);
-    height: var(--JupiterRadius);
-    border-radius: 50%;
-    background: var(--Jupiter);
-    color: var(--white);
-    line-height: var(--JupiterRadius);
-    text-align: center;
-}
-
-#Saturn {
-    width: var(--SaturnRadius);
-    height: var(--SaturnRadius);
-    border-radius: 50%;
-    background: var(--Saturn);
-    color: var(--white);
-    line-height: var(--SaturnRadius);
-    text-align: center;
-}
-
-#Uranus {
-    width: var(--UranusRadius);
-    height: var(--UranusRadius);
-    border-radius: 50%;
-    background: var(--Uranus);
-    color: var(--white);
-    line-height: var(--UranusRadius);
-    text-align: center;
-}
-
-#Neptune {
-    width: var(--NeptuneRadius);
-    height: var(--NeptuneRadius);
-    border-radius: 50%;
-    background: var(--Neptune);
-    color: var(--white);
-    line-height: var(--NeptuneRadius);
-    text-align: center;
-}
-
 body {
+    background-color: var(--white);
+    transition: 1s;
+}
+
+body.changeColor {
     background-color: var(--black);
-    height:3000px;
 }
 
 .content {
@@ -311,16 +303,24 @@ body {
     width: 100%;
     height: 600px;
     margin: 30px;
-    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    
     border-radius: 15px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: 0.5s;
+}
+
+.cards .card:hover {
+    background: rgba(255, 0, 0, 1);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     border-top: 2px solid rgba(255,255,255,0.2);
     border-left: 2px solid rgba(255,255,255,0.2);
     backdrop-filter: blur(5px);
+    
 }
 
 .cards .card section {
