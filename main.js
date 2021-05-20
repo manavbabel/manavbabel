@@ -1,3 +1,9 @@
+/* TODO: 
+intersectionobserver not firing on intersection of nametext with nav 
+instead of modifying classes, directly modify styles eg opacity?
+add cheats color functionality to cards
+*/
+
 /* Function to shift colours when scrolling past the name */
 
 function ScrollChange(event) {
@@ -5,6 +11,8 @@ function ScrollChange(event) {
   var NameText = document.getElementById("NameText");
   var Scroll = document.getElementById("Scroll");
   var NameBackground = document.getElementById("NameBackground");
+  var nav = document.getElementsByTagName("nav")[0];
+  var navtext = 
 
   pos = window.pageYOffset;
   
@@ -14,31 +22,18 @@ function ScrollChange(event) {
     Scroll.classList.add("hide");
     NameBackground.classList.add("changeColor");
     document.body.classList.add("changeColor");
+    nav.classList.add("changeColor");
   } else {
     Name.classList.remove("changeColor");
     NameText.classList.remove("changeColor");
     Scroll.classList.remove("hide");
     NameBackground.classList.remove("changeColor");
     document.body.classList.remove("changeColor");
+    nav.classList.remove("changeColor");
   }
 }
 
 document.addEventListener("scroll", ScrollChange, {passive:false});
-
-/*
-
- makes nav visible if Name is offscreen 
-
-let NameObserver = new IntersectionObserver(
-  (Name, observer) => {
-    if (Name.intersectionRatio <= 0.5) {
-        document.getElementById("Nav").classList.add("hidden");
-        alert("hidden!")
-      }
-    }, {threshold: 0});
-
-NameObserver.observe(document.getElementById("NameText"));
-*/
 
 /* Konami code functionality */
 
@@ -77,4 +72,32 @@ function ActivateCheats() {
   document.getElementById("Name").classList.add("cheats");
   document.getElementById("NameText").classList.add("cheats");
   document.getElementById("NameBackground").classList.add("cheats");
+  document.getElementsByTagName("nav")[0].classList.add("cheats");
+  document.getElementById("Scroll").classList.add("cheats");
+  document.getElementsById("card").forEach(function(element){ element.classlist.add("cheats")});
 }
+
+/* Causes Nav to separate when NameText passes through it */
+
+var nav = document.getElementsByTagName("nav")[0];
+var ul = document.getElementsByTagName("ul")[0];
+
+let options = {
+  root: nav,
+  threshold: 0.2
+}
+
+function NavSeparation (entries) {
+
+    if (entries[0].isIntersecting) {
+      nav.classList.add("touching");
+      alert("int");
+    } else {
+      nav.classList.remove("touching");
+      alert("nonint");
+    }
+  };
+
+let NameTextObserver = new IntersectionObserver(NavSeparation, options);
+
+NameTextObserver.observe(document.getElementById("NameText"));

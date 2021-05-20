@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="main.css" rel="stylesheet" />
-<script src="main.js"></script>
 
 <!--add maths and physics notes!-->
 
@@ -13,6 +11,15 @@
 
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="#About Me">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Notes</a></li>
+      <li><a href="#">Contact Me</a></li>
+    </ul>
+  </nav>
+
   <header>
     <div id="Name">
       <span id="NameText">Manav<span>&emsp14;</span>Babel</span>
@@ -21,28 +28,22 @@
     <p id="Scroll">——— ⩔ ———</p>
   </header>
 
-  <nav id="Nav">
-    <ul>
-      <li id="Sun"><a href="#">Misc</a></li>
-    </ul>
-  </nav>
-
   <div class="content">
 
     <div class="cards">
 
-      <div class="card">
+      <div class="card" id = "About Me" data-tilt>
 
-        <section id="Misc1">
-          <h1>Misc1</h1>
-          <p>LoremIpsumstuffaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <section>
+          <h1>About Me</h1>
+          <p>Hi! I'm Manav Babel.</p>
         </section>
 
       </div>
 
-      <div class="card">
+      <div class="card" id="Misc2" data-tilt>
 
-        <section id="Misc2">
+        <section>
           <h1>Misc2</h1>
           <p>Lorem Ipsumstuffaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </p>
         </section>
@@ -52,4 +53,14 @@
     </div>
 
   </div>
+
+  <section id="footer">
+    <div>Try the Konami Code!</div>
+    <div id="LinkedInLink"></div>
+    <div>Contact Me</div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="vanilla-tilt.js"></script> 
+  <script src="main.js"></script>
 </body>
