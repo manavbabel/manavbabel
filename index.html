@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 
-<link href="main.css" rel="stylesheet" />
+<link href="main.css" rel="stylesheet"/>
+<link rel="favicon" href="./favicon_io/siteicon.ico">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!--add maths and physics notes!-->
+<script type="text/javascript" src="vanilla-tilt.js"></script> 
+
+<script src="main.js"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<!--
+  TODO:
+  Add maths and physics notes
+  Space status update (xkcd 2469)
+  CV somewhere
+  Change navbar so default is black so subpages default to dark theme
+  finish off contact me page
+  clean up and organise
+-->
 
 <head>
   <title>MB</title>
-  <link rel="favicon" type = "image/ico" href = "favicon_io/favicon.ico">
+  <div id="nav-placeholder"></div>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
 </head>
 
 <body>
-
-  <nav>
-    <ul>
-      <li><a href="#About Me">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Notes</a></li>
-      <li><a href="#">Contact Me</a></li>
-    </ul>
-  </nav>
 
   <header>
     <div id="Name">
@@ -30,13 +47,23 @@
 
   <div class="content">
 
-    <div class="cards">
+    <div class="cards" id = "About Me" >
 
-      <div class="card" id = "About Me" data-tilt>
+      <div class="card" data-tilt>
 
         <section>
           <h1>About Me</h1>
-          <p>Hi! I'm Manav Babel.</p>
+          <p>
+            <br>
+            Hi! I'm Manav Babel. 
+            <br> 
+            I'm a Physics undergrad at the University of Oxford, and I have an avid interest in all things maths, physics, computer science, music, and photography.
+            <br> <br>
+            In my spare time, I like to play guitar, read fantasy and sci-fi, and think up increasingly bad puns.
+            <br> <br>
+            Here, you'll find a selection of the projects I've completed over the years, a set of physics tutorials covering most of my degree, as well as some secrets you can find if you poke around enough.
+            <br> <br> 
+            Enjoy!
         </section>
 
       </div>
@@ -54,13 +81,16 @@
 
   </div>
 
-  <section id="footer">
-    <div>Try the Konami Code!</div>
-    <div id="LinkedInLink"></div>
-    <div>Contact Me</div>
-  </section>
+  <div id="Projects">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="vanilla-tilt.js"></script> 
-  <script src="main.js"></script>
+  </div>
+
+</div>
+
+<section id="footer" title="Try the Konami Code!">
+  <a href = ""><img src = "" id = "LinkedIn"></a>
+  <div>Manav Babel</div>
+  <div>2021</div>
+</section>
+
 </body>

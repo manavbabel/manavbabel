@@ -244,7 +244,7 @@ nav.touching {
 nav ul {
     height: 100%;
 
-    display :flex;
+    display : flex;
     justify-content: space-evenly;
     align-content: center;
 
@@ -324,7 +324,7 @@ body.changeColor {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     flex-wrap: wrap;
     z-index: 1;
@@ -366,8 +366,9 @@ body.changeColor {
 
 .card section h1 {
     font-family: "MANIFESTO", serif;
-    font-size: 100px;
+    font-size: 80px;
     color: var(--white);
+    white-space: nowrap;
 
     text-align: right;
     width: 100%;
@@ -400,15 +401,26 @@ body.changeColor {
 }
 
 #footer {
-    height: 30vh;
-    border: 5px solid red;
+    height: 10vh;
 
     background-color: var(--black);
-    filter: brightness(0.7);
+    filter: brightness(0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0;
 }
 
 #footer div {
     color: var(--white);
+}
+
+#footer a {
+    color: var(--white);
+    text-decoration: none;
 }
 
 

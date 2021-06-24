@@ -12,7 +12,6 @@ function ScrollChange(event) {
   var Scroll = document.getElementById("Scroll");
   var NameBackground = document.getElementById("NameBackground");
   var nav = document.getElementsByTagName("nav")[0];
-  var navtext = 
 
   pos = window.pageYOffset;
   
@@ -94,7 +93,7 @@ function NavSeparation (entries) {
       alert("int");
     } else {
       nav.classList.remove("touching");
-      alert("nonint");
+      /*alert("nonint");*/
     }
   };
 
